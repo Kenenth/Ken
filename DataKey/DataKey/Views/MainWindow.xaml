@@ -1,0 +1,50 @@
+﻿<Window x:Class="DataKey.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataKey"
+        xmlns:vm="clr-namespace:DataKey.ViewModels"
+        mc:Ignorable="d"
+        Title="数据加密" Height="520" Width="820">
+    
+    <Window.DataContext>
+        <vm:MainUIWndViewModel/>
+    </Window.DataContext>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="数据:" Width="35"/>
+            <TextBox TextWrapping="WrapWithOverflow" Width="745" VerticalScrollBarVisibility="Auto" Text="{Binding SourceData}" AcceptsReturn="True"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0,10,0,10" Orientation="Vertical" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="公钥:" Width="35"/>
+                <TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Height="130" Width="745" VerticalScrollBarVisibility="Auto"
+                         Text="{Binding PublicKey}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="密钥:" Width="35"/>
+                <TextBox TextWrapping="WrapWithOverflow" Width="700" IsReadOnly="True" Text="{Binding PrivateKeyPath}"/>
+                <Button Margin="5,0,0,0" Content="..." Width="40" Command="{Binding BrowsePrivateKeyCmd}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="数据:" Width="35"/>
+            <TextBox TextWrapping="WrapWithOverflow" Width="655" VerticalScrollBarVisibility="Auto" Text="{Binding TargetData}" AcceptsReturn="True"/>
+            <StackPanel Margin="10,0,0,0" Orientation="Vertical" VerticalAlignment="Center">
+                <Button Width="80" Height="35" Content="加密" Command="{Binding EncryptDataCmd}"/>
+                <Button Margin="0,10,0,0" Width="80" Height="35" Content="解密" Command="{Binding DecryptDataCmd}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
