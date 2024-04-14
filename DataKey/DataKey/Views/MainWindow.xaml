@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataKey"
-        xmlns:vm="clr-namespace:DataKey.ViewModels" ResizeMode="NoResize"
-        mc:Ignorable="d"
+        xmlns:vm="clr-namespace:DataKey.ViewModels"
+        mc:Ignorable="d" ResizeMode="CanMinimize"
         Title="数据加密" Height="530" Width="820">
     
     <Window.DataContext>

@@ -71,7 +71,7 @@ namespace DataKey.ViewModels
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.Filter = "PEM files ( *. pem) | *. pem|All files ( *.* ) | *.* ";
+            openFileDialog.Filter = "PEM files (*.pem)|*.pem|All files (*.*)|*.*";
             openFileDialog.InitialDirectory = "C:\\";
             if (openFileDialog.ShowDialog() == true)
             {
@@ -109,7 +109,7 @@ namespace DataKey.ViewModels
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to read {PrivateKeyPath}, error info: {ex.Message} .");
+                MessageBox.Show($"Failed to read {PrivateKeyPath}, error info: {ex.Message}.");
                 return;
             }
 
@@ -122,6 +122,7 @@ namespace DataKey.ViewModels
             privateKeyPath = ConfigurationManager.AppSettings[PRIVATE_KEY_PATH];
 
         }
+
         private void SavePublicKey()
         {
             if (string.IsNullOrEmpty(publicKey) && string.IsNullOrEmpty(privateKeyPath))
