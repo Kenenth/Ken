@@ -14,7 +14,7 @@
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
@@ -28,7 +28,7 @@
         <StackPanel Grid.Row="1" Margin="0,10,0,10" Orientation="Vertical" HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="公钥:" Width="35"/>
-                <TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Height="130" Width="745" VerticalScrollBarVisibility="Auto"
+                <TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Height="100" Width="745" VerticalScrollBarVisibility="Auto"
                          VerticalContentAlignment="Top" Padding="5" Text="{Binding PublicKey}"/>
             </StackPanel>
 
